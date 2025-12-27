@@ -1,0 +1,140 @@
+<!-- navbar-hero.component.html -->
+<div class="navbar-hero-container">
+    <!-- Navbar Fija -->
+    <nav [class.scrolled]="isScrolled" class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" routerLink="/">
+                <i class="fas fa-server me-2"></i>
+                <span class="brand-name">Tech<span class="brand-red">Solutions</span></span>
+            </a>
+
+            <!-- Botón móvil -->
+            <button class="navbar-toggler" type="button" (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpen">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menú -->
+            <div class="collapse navbar-collapse" [class.show]="isMenuOpen">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" routerLink="/" routerLinkActive="active">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/nosotros" routerLinkActive="active">Nosotros</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Servicios
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" routerLink="/servicios/infraestructura">Infraestructura IT</a>
+                            </li>
+                            <li><a class="dropdown-item" routerLink="/servicios/seguridad">Ciberseguridad</a></li>
+                            <li><a class="dropdown-item" routerLink="/servicios/desarrollo">Desarrollo Web</a></li>
+                            <li><a class="dropdown-item" routerLink="/servicios/cloud">Cloud Computing</a></li>
+                            <li><a class="dropdown-item" routerLink="/servicios/soporte">Soporte Técnico</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/portafolio" routerLinkActive="active">Portafolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/blog" routerLinkActive="active">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/contacto" routerLinkActive="active">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section Simple y Dinámico -->
+    <div class="hero-section">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-7">
+                    <!-- Badge dinámico -->
+                    <div class="service-badge mb-4">
+                        <span class="badge-text">
+                            <i class="fas fa-bolt me-2"></i>
+                            Especialistas en TI
+                        </span>
+                    </div>
+
+                    <!-- Título principal -->
+                    <h1 class="hero-title mb-4">
+                        Soluciones de
+                        <span class="text-red">Tecnología</span>
+                        para tu
+                        <span class="typing-container">
+                            <span class="typed-text">{{currentText}}</span>
+                            <span class="cursor">|</span>
+                        </span>
+                    </h1>
+
+                    <!-- Subtítulo -->
+                    <p class="hero-subtitle mb-5">
+                        Brindamos servicios IT profesionales para empresas que buscan innovar,
+                        optimizar procesos y garantizar la seguridad de sus sistemas.
+                    </p>
+
+                    <!-- Botones de acción -->
+                    <div class="hero-buttons mb-5">
+                        <a routerLink="/servicios" class="btn btn-danger rounded-0 btn-lg me-3">
+                            <i class="fas fa-rocket me-2"></i>
+                            Nuestros Servicios
+                        </a>
+                        <a routerLink="/contacto" class="btn btn-outline-light rounded-0 btn-lg">
+                            <i class="fas fa-phone me-2"></i>
+                            Contactar Ahora
+                        </a>
+                    </div>
+
+                    <!-- Contadores animados -->
+                    <div class="row counters">
+                        <div class="col-6 col-md-3 mb-4" *ngFor="let counter of counters">
+                            <div class="counter-item text-center">
+                                <div class="counter-value">{{counter.value}}</div>
+                                <div class="counter-label">{{counter.label}}</div>
+                                <div class="counter-suffix">{{counter.suffix}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <!-- Imagen o ilustración dinámica -->
+                    <div class="hero-image-container">
+                        <div class="floating-elements">
+                            <div class="floating-icon server">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <div class="floating-icon shield">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="floating-icon cloud">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                            <div class="floating-icon code">
+                                <i class="fas fa-code"></i>
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta de contacto flotante -->
+                        <div class="contact-card">
+                            <div class="card-body">
+                                <h6><i class="fas fa-headset me-2"></i>Soporte Inmediato</h6>
+                                <p class="mb-2">Respuesta en menos de 15 minutos</p>
+                                <a href="tel:+1234567890" class="btn btn-sm btn-outline-danger">
+                                    <i class="fas fa-phone me-1"></i> Llamar Ahora
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -19,13 +19,21 @@
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css",
+              "src/lib/animate/animate.css",
+              "src/bootstrap.min.css",
+              "src/lib/animate/animate.min.css",
+              "src/lib/owlcarousel/assets/owl.carousel.min.css",
+              "src/lib/owlcarousel/assets/owl.theme.default.min.css"
+            ],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "src/js/main.js"
             ]
           },
           "configurations": {
