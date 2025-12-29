@@ -1,0 +1,104 @@
+<!-- Clients Section Start -->
+<section class="clients-section">
+    <div class="container">
+        <!-- Header Section -->
+        <div class="section-header text-center mb-5">
+            <div class="tech-badge mb-3">
+                <span class="badge-content">
+                    <i class="fas fa-handshake me-2"></i>
+                    Confían en Nosotros
+                </span>
+            </div>
+            <h2 class="section-title mb-3">Clientes que Confían en Nuestra Experiencia</h2>
+            <p class="section-subtitle text-muted">
+                Más de <span class="text-danger fw-bold">100+ empresas</span> han elegido nuestros servicios IT.
+                Desde startups hasta grandes corporaciones, entregamos soluciones que transforman negocios.
+            </p>
+        </div>
+
+        <!-- Stats Counter -->
+        <div class="client-stats mb-5">
+            <div class="row g-4 justify-content-center">
+                <div class="col-6 col-md-3">
+                    <div class="stat-card text-center">
+                        <div id="client-counter" class="stat-number text-danger">0</div>
+                        <div class="stat-label">Clientes Satisfechos</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-card text-center">
+                        <div id="retention-counter" class="stat-number text-danger">0</div>
+                        <div class="stat-label">% Retención</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-card text-center">
+                        <div id="months-counter" class="stat-number text-danger">0</div>
+                        <div class="stat-label">Meses Promedio</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-card text-center">
+                        <div id="rating-counter" class="stat-number text-danger">0</div>
+                        <div class="stat-label">Rating Promedio</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Clients Grid -->
+        <div class="clients-grid">
+            <div class="row g-4 justify-content-center">
+                <!-- Cliente dinámico -->
+                <div class="col-6 col-md-4 col-lg-3" *ngFor="let client of filteredClients">
+                    <div class="client-card animate-on-scroll">
+                        <div class="client-logo">
+                            <img [src]="client.logo" [alt]="client.name" class="img-fluid" loading="lazy">
+                        </div>
+                        <div class="client-info">
+                            <h5 class="client-name">{{client.name}}</h5>
+                            <div class="client-category">{{client.category}}</div>
+                            <div class="client-duration">
+                                <i class="far fa-calendar-alt me-1"></i> {{client.duration}}
+                            </div>
+                        </div>
+                        <div class="client-overlay">
+                            <div class="overlay-content">
+                                <h5>{{client.name}}</h5>
+                                <p>{{client.description}}</p>
+                                <div class="client-testimonial">
+                                    "{{client.testimonial}}"
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carousel for Mobile -->
+        <div class="clients-carousel d-lg-none mt-5">
+            <div class="swiper clientsSwiper">
+                <div class="swiper-wrapper">
+                    <!-- Slides dinámicas -->
+                    <div class="swiper-slide" *ngFor="let client of filteredClients">
+                        <div class="client-card">
+                            <div class="client-logo">
+                                <img [src]="client.logo" [alt]="client.name" class="img-fluid" loading="lazy">
+                            </div>
+                            <div class="client-info">
+                                <h5 class="client-name">{{client.name}}</h5>
+                                <div class="client-category">{{client.category}}</div>
+                                <div class="client-duration">
+                                    <i class="far fa-calendar-alt me-1"></i> {{client.duration}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination" *ngIf="filteredClients.length > 1"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Clients Section End -->
