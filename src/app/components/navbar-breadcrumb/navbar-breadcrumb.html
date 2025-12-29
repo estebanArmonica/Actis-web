@@ -1,74 +1,326 @@
 <!-- navbar-hero.component.html -->
-<div class="navbar-hero-container">
-    <!-- Navbar Fija -->
-    <nav [class.scrolled]="isScrolled" class="navbar navbar-expand-lg fixed-top">
+<div class="navbar-hero-wrapper">
+    <!-- Topbar Mejorado -->
+    <div class="topbar" *ngIf="showTopbar">
         <div class="container">
-            <!-- Logo -->
-            <a class="navbar-brand" routerLink="/">
-                <img src="https://media.licdn.com/dms/image/v2/C4E1BAQG7LSHx8iIIaQ/company-background_10000/company-background_10000/0/1585348240518/actis_limitada_cover?e=2147483647&v=beta&t=YaIOp08i9WWlCWmRWekERRK-OziIGIwk1i7W_SJ73g8" alt="Logo ACTIS" 
-                height="110" width="250">
+            <div class="topbar-content">
+                <div class="contact-info">
+                    <a href="mailto:contacto@actis.cl" class="topbar-link">
+                        <i class="fas fa-envelope"></i>
+                        <span class="d-none d-md-inline">contacto@actis.cl</span>
+                    </a>
+                    <span class="topbar-link">
+                        <i class="fas fa-clock"></i>
+                        <span class="d-none d-md-inline">Lun-Vie 9:00-18:00</span>
+                    </span>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/company/actis-cl" class="social-icon" aria-label="LinkedIn" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar Moderna -->
+    <nav class="navbar" [class.navbar-scrolled]="isScrolled" [class.navbar-mobile-open]="isMenuOpen">
+        <div class="container">
+            <!-- Logo con versión reducida -->
+            <a class="navbar-logo" routerLink="/">
+                <img src="https://media.licdn.com/dms/image/v2/C4E1BAQG7LSHx8iIIaQ/company-background_10000/company-background_10000/0/1585348240518/actis_limitada_cover?e=2147483647&v=beta&t=YaIOp08i9WWlCWmRWekERRK-OziIGIwk1i7W_SJ73g8" 
+                     alt="ACTIS - Soluciones Tecnológicas"
+                     class="logo-full">
+                <span class="logo-compact">ACTIS</span>
             </a>
 
-            <!-- Botón móvil -->
-            <button class="navbar-toggler" type="button" (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpen">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!-- Menú -->
-            <div class="collapse navbar-collapse" [class.show]="isMenuOpen">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <!-- Menú Desktop -->
+            <div class="navbar-menu">
+                <ul class="nav-list">
                     <li class="nav-item">
-                        <a class="nav-link active" routerLink="/" routerLinkActive="active">Inicio</a>
+                        <a class="nav-link" routerLink="/" routerLinkActive="active">
+                            <i class="fas fa-home nav-icon"></i>
+                            <span>Inicio</span>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/nosotros" routerLinkActive="active">Nosotros</a>
+                        <a class="nav-link" routerLink="/nosotros" routerLinkActive="active">
+                            <i class="fas fa-users nav-icon"></i>
+                            <span>Nosotros</span>
+                        </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            Servicios
+                        <a class="nav-link" routerLink="/servicios" routerLinkActive="active">
+                            <i class="fas fa-cogs nav-icon"></i>
+                            <span>Servicios</span>
+                            <i class="fas fa-chevron-down dropdown-arrow"></i>
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" routerLink="/servicios/infraestructura">Infraestructura IT</a>
-                            </li>
-                            <li><a class="dropdown-item" routerLink="/servicios/seguridad">Ciberseguridad</a></li>
-                            <li><a class="dropdown-item" routerLink="/servicios/desarrollo">Desarrollo Web</a></li>
-                            <li><a class="dropdown-item" routerLink="/servicios/cloud">Cloud Computing</a></li>
-                            <li><a class="dropdown-item" routerLink="/servicios/soporte">Soporte Técnico</a></li>
-                        </ul>
+                        <div class="dropdown-content">
+                            <a class="dropdown-item" routerLink="/servicios/infraestructura">
+                                <i class="fas fa-server"></i>
+                                Infraestructura IT
+                            </a>
+                            <a class="dropdown-item" routerLink="/servicios/seguridad">
+                                <i class="fas fa-shield-alt"></i>
+                                Ciberseguridad
+                            </a>
+                            <a class="dropdown-item" routerLink="/servicios/desarrollo">
+                                <i class="fas fa-code"></i>
+                                Desarrollo Web
+                            </a>
+                            <a class="dropdown-item" routerLink="/servicios/cloud">
+                                <i class="fas fa-cloud"></i>
+                                Cloud Computing
+                            </a>
+                            <a class="dropdown-item" routerLink="/servicios/soporte">
+                                <i class="fas fa-headset"></i>
+                                Soporte Técnico
+                            </a>
+                        </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/portafolio" routerLinkActive="active">Portafolio</a>
+                        <a class="nav-link" routerLink="/portafolio" routerLinkActive="active">
+                            <i class="fas fa-briefcase nav-icon"></i>
+                            <span>Portafolio</span>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/blog" routerLinkActive="active">Blog</a>
+                        <a class="nav-link" routerLink="/blog" routerLinkActive="active">
+                            <i class="fas fa-blog nav-icon"></i>
+                            <span>Blog</span>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/contacto" routerLinkActive="active">Contacto</a>
+                        <a class="nav-link" routerLink="/contacto" routerLinkActive="active">
+                            <i class="fas fa-envelope nav-icon"></i>
+                            <span>Contacto</span>
+                        </a>
                     </li>
                 </ul>
+            </div>
+
+            <!-- Botón Móvil -->
+            <button class="navbar-toggle" (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpen" aria-label="Menú">
+                <div class="hamburger" [class.active]="isMenuOpen">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </div>
+
+        <!-- Menú Móvil (Overlay) -->
+        <div class="mobile-menu-overlay" [class.active]="isMenuOpen" (click)="toggleMenu()"></div>
+        <div class="mobile-menu" [class.active]="isMenuOpen">
+            <div class="mobile-menu-header">
+                <img src="https://media.licdn.com/dms/image/v2/C4E1BAQG7LSHx8iIIaQ/company-background_10000/company-background_10000/0/1585348240518/actis_limitada_cover?e=2147483647&v=beta&t=YaIOp08i9WWlCWmRWekERRK-OziIGIwk1i7W_SJ73g8" 
+                     alt="ACTIS"
+                     class="mobile-logo">
+                <button class="mobile-close" (click)="toggleMenu()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="mobile-menu-content">
+                <ul class="mobile-nav-list">
+                    <li>
+                        <a class="mobile-nav-link" routerLink="/" (click)="toggleMenu()">
+                            <i class="fas fa-home"></i>
+                            Inicio
+                        </a>
+                    </li>
+                    <li>
+                        <a class="mobile-nav-link" routerLink="/nosotros" (click)="toggleMenu()">
+                            <i class="fas fa-users"></i>
+                            Nosotros
+                        </a>
+                    </li>
+                    <li class="mobile-dropdown">
+                        <div class="mobile-dropdown-header" (click)="toggleMobileDropdown()">
+                            <i class="fas fa-cogs"></i>
+                            Servicios
+                            <i class="fas fa-chevron-down mobile-dropdown-arrow"></i>
+                        </div>
+                        <div class="mobile-dropdown-content" [class.active]="isMobileDropdownOpen">
+                            <a class="mobile-dropdown-item" routerLink="/servicios/infraestructura" (click)="toggleMenu()">
+                                <i class="fas fa-server"></i>
+                                Infraestructura IT
+                            </a>
+                            <a class="mobile-dropdown-item" routerLink="/servicios/seguridad" (click)="toggleMenu()">
+                                <i class="fas fa-shield-alt"></i>
+                                Ciberseguridad
+                            </a>
+                            <a class="mobile-dropdown-item" routerLink="/servicios/desarrollo" (click)="toggleMenu()">
+                                <i class="fas fa-code"></i>
+                                Desarrollo Web
+                            </a>
+                            <a class="mobile-dropdown-item" routerLink="/servicios/cloud" (click)="toggleMenu()">
+                                <i class="fas fa-cloud"></i>
+                                Cloud Computing
+                            </a>
+                            <a class="mobile-dropdown-item" routerLink="/servicios/soporte" (click)="toggleMenu()">
+                                <i class="fas fa-headset"></i>
+                                Soporte Técnico
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="mobile-nav-link" routerLink="/portafolio" (click)="toggleMenu()">
+                            <i class="fas fa-briefcase"></i>
+                            Portafolio
+                        </a>
+                    </li>
+                    <li>
+                        <a class="mobile-nav-link" routerLink="/blog" (click)="toggleMenu()">
+                            <i class="fas fa-blog"></i>
+                            Blog
+                        </a>
+                    </li>
+                    <li>
+                        <a class="mobile-nav-link" routerLink="/contacto" (click)="toggleMenu()">
+                            <i class="fas fa-envelope"></i>
+                            Contacto
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="mobile-actions">
+                    <a href="mailto:contacto@actis.cl" class="mobile-phone rounded-0">
+                        <i class="fas fa-envelope"></i>
+                        Enviar Correo
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Breadcrumb dinámico -->
-    <div class="breadcrumb-section">
-        <div class="breadcrumb-overlay"></div>
-        <div class="container-fluid py-5">
-            <div class="row py-5">
-                <div class="col-12 pt-lg-5 mt-lg-5 text-center">
-                    <h1 class="display-4 text-white animated zoomIn">{{title}}</h1>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb justify-content-center">
+    <!-- Sección Dinámica: Hero para Inicio, Breadcrumb para otras páginas -->
+    <ng-container *ngIf="isHomePage; else breadcrumbTemplate">
+        <!-- Hero Section Moderna (solo en Inicio) -->
+        <section class="hero-section" [class.hero-scrolled]="isScrolled">
+            <div class="hero-background"></div>
+            
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <!-- Badge -->
+                        <div class="hero-badge">
+                            <span class="badge-content">
+                                <i class="fas fa-bolt"></i>
+                                Líderes en Soluciones TI
+                            </span>
+                        </div>
+
+                        <!-- Título Principal -->
+                        <h1 class="hero-title">
+                            Transformamos tu 
+                            <span class="text-gradient">Negocio</span>
+                            <br>con 
+                            <span class="typing-text">
+                                <span class="typed">{{currentText}}</span>
+                                <span class="cursor">|</span>
+                            </span>
+                        </h1>
+
+                        <!-- Descripción -->
+                        <p class="hero-description">
+                            Expertos en tecnología empresarial. Desarrollamos soluciones personalizadas 
+                            que impulsan la innovación, optimizan procesos y garantizan la seguridad digital.
+                        </p>
+
+                        <!-- CTA Buttons -->
+                        <div class="hero-actions">
+                            <a routerLink="/servicios" class="btn btn-primary rounded-0">
+                                <i class="fas fa-rocket"></i>
+                                Ver Servicios
+                            </a>
+                            <a routerLink="/contacto" class="btn btn-outline rounded-0">
+                                <i class="fas fa-paper-plane"></i>
+                                Contactar Ahora
+                            </a>
+                        </div>
+
+                        <!-- Stats -->
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">98%</div>
+                                <div class="stat-label">Clientes Satisfechos</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">250+</div>
+                                <div class="stat-label">Proyectos Completados</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">24/7</div>
+                                <div class="stat-label">Soporte Técnico</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">15+</div>
+                                <div class="stat-label">Años de Experiencia</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-visual">
+                        <!-- Tech Elements -->
+                        <div class="tech-elements">
+                            <div class="tech-element element-1" data-speed="0.05">
+                                <i class="fas fa-server"></i>
+                                <span>Infraestructura</span>
+                            </div>
+                            <div class="tech-element element-2" data-speed="0.08">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Seguridad</span>
+                            </div>
+                            <div class="tech-element element-3" data-speed="0.12">
+                                <i class="fas fa-cloud"></i>
+                                <span>Cloud</span>
+                            </div>
+                            <div class="tech-element element-4" data-speed="0.15">
+                                <i class="fas fa-code"></i>
+                                <span>Desarrollo</span>
+                            </div>
+                            <div class="tech-element element-5" data-speed="0.1">
+                                <i class="fas fa-network-wired"></i>
+                                <span>Redes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <span class="scroll-text">Desplazar</span>
+            </div>
+        </section>
+    </ng-container>
+
+    <ng-template #breadcrumbTemplate>
+        <!-- Breadcrumb dinámico (para otras páginas) -->
+        <div class="breadcrumb-section">
+            <div class="breadcrumb-overlay"></div>
+            <div class="container">
+                <div class="breadcrumb-content">
+                    <h1 class="breadcrumb-title">{{title}}</h1>
+                    <nav aria-label="breadcrumb" class="breadcrumb-nav">
+                        <ol class="breadcrumb-list">
                             <li class="breadcrumb-item">
-                                <a routerLink="/" class="h5 text-white">Home</a>
+                                <a routerLink="/" class="breadcrumb-link">
+                                    <i class="fas fa-home"></i>
+                                    Inicio
+                                </a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
-                                <span class="h5 text-white">{{title}}</span>
+                                <span class="breadcrumb-current">{{title}}</span>
                             </li>
                         </ol>
                     </nav>
                 </div>
             </div>
         </div>
-    </div>
+    </ng-template>
 </div>

@@ -1,9 +1,16 @@
 /* topbar.component.css */
 .topbar {
-    background-color: #dc3545 !important; /* Rojo de Bootstrap */
+    background-color: #dc3545 !important;
     font-size: 0.85rem;
-    position: relative;
-    z-index: 1031; /* Mayor que navbar para que se vea */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1035; /* UN POCO MÁS BAJO que navbar */
+    transition: all 0.3s ease;
+    height: 48px; /* Altura fija */
+    display: flex;
+    align-items: center;
 }
 
 .topbar a {
@@ -35,14 +42,40 @@
     .topbar {
         padding: 0.5rem 0;
         text-align: center;
+        position: fixed !important; /* Mantener fixed en móvil */
+        z-index: 1035; /* Mismo z-index que desktop */
+        height: auto; /* Altura automática */
+        min-height: 40px;
     }
     
     .topbar .d-flex {
         justify-content: center;
+        flex-direction: column;
+        gap: 0.3rem;
+        padding: 0.5rem 0;
     }
     
     .social-icons {
         margin-top: 0.5rem;
         justify-content: center;
+    }
+    
+    .social-icons a {
+        margin: 0 0.5rem;
+    }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 576px) {
+    .topbar {
+        font-size: 0.75rem;
+        padding: 0.3rem 0;
+    }
+    
+    .social-icons i {
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        font-size: 0.8rem;
     }
 }

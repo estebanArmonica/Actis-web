@@ -1,5 +1,4 @@
 import { Component, OnInit, inject, DestroyRef } from '@angular/core';
-import { Topbar } from '../../components/topbar/topbar';
 import { Footer } from "../../components/footer/footer";
 import { NavbarBreadcrumb } from "../../components/navbar-breadcrumb/navbar-breadcrumb";
 import { Router } from '@angular/router';
@@ -17,7 +16,7 @@ import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-contacto',
-  imports: [Topbar, Footer, NavbarBreadcrumb, CommonModule, ReactiveFormsModule],
+  imports: [Footer, NavbarBreadcrumb, CommonModule, ReactiveFormsModule],
   templateUrl: './contacto.html',
   styleUrl: './contacto.css',
 })
