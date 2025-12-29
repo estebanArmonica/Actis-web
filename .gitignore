@@ -41,3 +41,10 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+
+# archivo env
+.env
+.env.MAILERSEND_API_KEY
+.env.MAILERSEND_FROM_EMAIL
+.env.MAILERSEND_FROM_NAME
+.env.MAILERSEND_TO_EMAIL

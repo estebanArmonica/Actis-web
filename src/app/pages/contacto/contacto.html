@@ -1,0 +1,172 @@
+<app-topbar></app-topbar>
+<app-navbar-breadcrumb></app-navbar-breadcrumb>
+
+<!-- inicio del html -->
+
+
+<!-- Full Screen Search Start -->
+<div class="modal fade" id="searchModal" tabindex="-1">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
+            <div class="modal-header border-0">
+                <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex align-items-center justify-content-center">
+                <div class="input-group" style="max-width: 600px;">
+                    <input type="text" class="form-control bg-transparent border-primary p-3"
+                        placeholder="Type search keyword">
+                    <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Full Screen Search End -->
+
+<!-- Contact Start -->
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+            <h1 class="mb-0">Necesitas ayuda para crear o llevar a cabo un proyecto para tu empresa</h1>
+        </div>
+        <div class="row g-5 mb-5">
+            <div class="col-lg-4">
+                <div class="d-flex align-items-center wow fadeIn" data-wow-delay="0.4s">
+                    <div class="bg-danger d-flex align-items-center justify-content-center rounded"
+                        style="width: 60px; height: 60px;">
+                        <i class="fa fa-envelope-open text-white"></i>
+                    </div>
+                    <div class="ps-4">
+                        <h5 class="mb-2">Mandanos un correo</h5>
+                        <h4 class="text-danger mb-0">contacto@actis.cl</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="d-flex align-items-center wow fadeIn" data-wow-delay="0.8s">
+                    <div class="bg-danger d-flex align-items-center justify-content-center rounded"
+                        style="width: 60px; height: 60px;">
+                        <i class="bi bi-linkedin text-white"></i>
+                    </div>
+                    <div class="ps-4">
+                        <h5 class="mb-2">Visita nuestra Linkedin</h5>
+                        <h4>
+                            <a href="https://www.linkedin.com/company/actis-cl" class="text-danger mb-0"
+                                target="_blank">Linkedin ACTIS</a>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- formulario de contacto al correo -->
+        <div class="row g-5">
+            <div class="col-lg-6 wow slideInUp" data-wow-delay="0.3s">
+                <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                    <div class="row g-3">
+                        <!-- Nombre -->
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="nombre" placeholder="Tu Nombre"
+                                    formControlName="nombre"
+                                    [class.is-invalid]="contactForm.get('nombre')?.invalid && contactForm.get('nombre')?.touched">
+                                <label for="nombre">Tu Nombre</label>
+                                <div *ngIf="contactForm.get('nombre')?.invalid && contactForm.get('nombre')?.touched"
+                                    class="invalid-feedback">
+                                    <div *ngIf="contactForm.get('nombre')?.errors?.['required']">
+                                        El nombre es requerido
+                                    </div>
+                                    <div *ngIf="contactForm.get('nombre')?.errors?.['minlength']">
+                                        Mínimo 3 caracteres
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="email" placeholder="Tu Email"
+                                    formControlName="email"
+                                    [class.is-invalid]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
+                                <label for="email">Tu Email</label>
+                                <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched"
+                                    class="invalid-feedback">
+                                    <div *ngIf="contactForm.get('email')?.errors?.['required']">
+                                        El email es requerido
+                                    </div>
+                                    <div *ngIf="contactForm.get('email')?.errors?.['email']">
+                                        Ingresa un email válido
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Asunto -->
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="asunto" placeholder="Asunto"
+                                    formControlName="asunto"
+                                    [class.is-invalid]="contactForm.get('asunto')?.invalid && contactForm.get('asunto')?.touched">
+                                <label for="asunto">Asunto</label>
+                                <div *ngIf="contactForm.get('asunto')?.invalid && contactForm.get('asunto')?.touched"
+                                    class="invalid-feedback">
+                                    <div *ngIf="contactForm.get('asunto')?.errors?.['required']">
+                                        El asunto es requerido
+                                    </div>
+                                    <div *ngIf="contactForm.get('asunto')?.errors?.['minlength']">
+                                        Mínimo 5 caracteres
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mensaje -->
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="Deja tu mensaje aquí" id="mensaje"
+                                    style="height: 150px" formControlName="mensaje"
+                                    [class.is-invalid]="contactForm.get('mensaje')?.invalid && contactForm.get('mensaje')?.touched"></textarea>
+                                <label for="mensaje">Mensaje</label>
+                                <div *ngIf="contactForm.get('mensaje')?.invalid && contactForm.get('mensaje')?.touched"
+                                    class="invalid-feedback">
+                                    <div *ngIf="contactForm.get('mensaje')?.errors?.['required']">
+                                        El mensaje es requerido
+                                    </div>
+                                    <div *ngIf="contactForm.get('mensaje')?.errors?.['minlength']">
+                                        Mínimo 20 caracteres
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Botón de envío -->
+                        <div class="col-12">
+                            <button class="btn btn-primary w-100 py-3" type="submit"
+                                [disabled]="contactForm.invalid || loading">
+                                <span *ngIf="!loading">
+                                    <i class="fas fa-paper-plane me-2"></i>Enviar Mensaje
+                                </span>
+                                <span *ngIf="loading">
+                                    <i class="fas fa-spinner fa-spin me-2"></i>Enviando...
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-6 wow slideInUp" data-wow-delay="0.6s">
+                <iframe class="position-relative rounded w-100 h-100"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
+                    frameborder="0" style="min-height: 350px; border:0;" allowfullscreen="" aria-hidden="false"
+                    tabindex="0"></iframe>
+            </div>
+        </div>
+        <!-- fin formulario de contacto al correo -->
+    </div>
+</div>
+<!-- Contact End -->
+
+<app-footer></app-footer>
+<!-- fin del html -->
