@@ -1,59 +1,69 @@
-# WebActis
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.1.
+# Web ACTIS
 
-## Development server
+Este proyecto es una nueva imagen del diseño de la página existente de ACTIS, el cual tiene el fin de dar una nueva imagen para acercar a diferentes y potenciales clientes para desarrollador proyectos junto con ACTIS.
 
-To start a local development server, run:
+Este proyecto usa principalmente el lenguaje de Angular y TypeScripts:
 
-```bash
-ng serve
-```
+- [ ]  Node.js 20.19.6 [Descargar Version](https://angular.dev/events/v21)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- [ ]  Angular 21 [Ir a la documentación](https://nodejs.org/en/download/current)
 
-## Code scaffolding
+- [ ]  Visual Studio Code [Descargar](https://code.visualstudio.com/download)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- [ ]  Bootstrap [Ir a Bootstrap](https://getbootstrap.com/)
 
-```bash
-ng generate component component-name
-```
+- [ ]  EmailJS [Ver API](https://www.mailersend.com/features/email-api?source=google&medium=cpc&campaign=MS_LATAM_gen%20-%20Email%20Features&content=Gen%20-%20Email%20API&term=javascript%20email%20api&ml_campaignid=12186006468&ml_adsetid=170722865246&gad_source=1&gad_campaignid=12186006468&gclid=Cj0KCQiAx8PKBhD1ARIsAKsmGbciG4a7pw2A4E3Au5xnCR5x7tQXPxC7GQ9HXWRB637tLF7JUY0rDUkaArDJEALw_wcB)
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-```bash
-ng generate --help
-```
+## Variables de Entorno
 
-## Building
+Para correr este proyecto se necesito de un archivo `.env` donde en este se encuentra las variables para eviar correos a travéz del formulario de contacto:
 
-To build the project run:
+`MAILERSEND_API_KEY=YOUR_API_KEY`
+`MAILERSEND_FROM_EMAIL=CONTACTO@DOMINIO.CL`
+`MAILERSEND_FROM_NAME=NOMBRE_SEND_MAILER`
+`MAILERSEND_TO_EMAIL=CORREO_DOMINIO`
 
-```bash
-ng build
-```
+Toda la información se encuentra usando la página de EmailJS, donde se deben crear las correspondiente variables [ir a la documentacion](https://www.mailersend.com/features/email-api?source=google&medium=cpc&campaign=MS_LATAM_gen%20-%20Email%20Features&content=Gen%20-%20Email%20API&term=javascript%20email%20api&ml_campaignid=12186006468&ml_adsetid=170722865246&gad_source=1&gad_campaignid=12186006468&gclid=Cj0KCQiAx8PKBhD1ARIsAKsmGbciG4a7pw2A4E3Au5xnCR5x7tQXPxC7GQ9HXWRB637tLF7JUY0rDUkaArDJEALw_wcB)
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-## Running unit tests
+## Correr el proyecto
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Para levantar el proyecto en entorno de pruebas debe seguir los siguientes comandos
 
 ```bash
-ng test
+  # descargar el github
+  git clone https://github.com/estebanArmonica/Actis-web.git
+
+  # crear el archivo .env con las variables de entorno
+   MAILERSEND_API_KEY=YOUR_API_KEY
+   MAILERSEND_FROM_EMAIL=CONTACTO@DOMINIO.CL
+   MAILERSEND_FROM_NAME=NOMBRE_SEND_MAILER
+   MAILERSEND_TO_EMAIL=CORREO_DOMINIO
+
+   # levantamos el proyecto 
+   ng serve
+
+   y listo se mostrara en terminal el url "http://localhost:4200"
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
+Para correr de forma producción es lo siguiente
 ```bash
-ng e2e
+  # descargar el github
+  git clone https://github.com/estebanArmonica/Actis-web.git
+
+  # crear el archivo .env con las variables de entorno
+   MAILERSEND_API_KEY=YOUR_API_KEY
+   MAILERSEND_FROM_EMAIL=CONTACTO@DOMINIO.CL
+   MAILERSEND_FROM_NAME=NOMBRE_SEND_MAILER
+   MAILERSEND_TO_EMAIL=CORREO_DOMINIO
+
+   # levantamos el proyecto usando docker
+   docker build -t mi-app-node .
+
+   # ejecutamos la imagen para probar que se puede levantar sin errores
+   docker run -p 8080:3000 -d mi-app-node
+
+   y listo si todo sale bien, solo se debe levantar en alguna arquitectora cloud la imagen de docker
 ```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
