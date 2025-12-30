@@ -49,7 +49,7 @@ export class NavbarBreadcrumb {
     '/servicios/cloud': 'Cloud Computing',
     '/servicios/soporte': 'Soporte Técnico',
     '/portafolio': 'Portafolio',
-    '/blog': 'Blog',
+    '/blog': 'Mantente Informado',
     '/contacto': 'Envíanos un Mensaje'
   };
 

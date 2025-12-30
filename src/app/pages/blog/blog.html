@@ -1,0 +1,221 @@
+<app-navbar-breadcrumb></app-navbar-breadcrumb>
+
+<!-- Full Screen Search Start -->
+<div class="modal fade" id="searchModal" tabindex="-1">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content" style="background: rgba(226, 29, 13, .95); backdrop-filter: blur(5px);">
+            <div class="modal-header border-0">
+                <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex align-items-center justify-content-center">
+                <div class="input-group" style="max-width: 600px;">
+                    <input type="text" class="form-control bg-transparent border-white p-3"
+                        placeholder="Type search keyword"
+                        style="color: white; border-color: rgba(255,255,255,0.5) !important;">
+                    <button class="btn btn-white px-4" style="color: #e21d0d;"><i class="bi bi-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Full Screen Search End -->
+
+<!-- Blog Start -->
+<div class="container-fluid py-5 wow fadeInUp blog-container" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <!-- Blog list Start -->
+            <div class="col-lg-8">
+                <div class="row g-5">
+                    <div class="col-md-6 wow slideInUp animate-slideInUp" data-wow-delay="0.1s">
+                        <div class="blog-item bg-light rounded overflow-hidden">
+                            <div class="blog-img position-relative overflow-hidden blog-img-container">
+                                <img class="img-fluid"
+                                    src="https://wp.angular.love/wp-content/uploads/2025/05/Okladki-blog-1920-x-1080-px-15.png"
+                                    alt="Lo nuevo de angular 20">
+                                <a class="position-absolute top-0 start-0 text-white rounded-end mt-5 py-2 px-4 blog-category"
+                                    href="" style="background: linear-gradient(135deg, #e21d0d, #b02a37);">UI GUI</a>
+                            </div>
+                            <div class="p-4 blog-content">
+                                <div class="d-flex mb-3 blog-meta">
+                                    <small><i class="bi bi-calendar-fill me-2" style="color: #e21d0d !important;"></i>30
+                                        Dic, 2025</small>
+                                </div>
+                                <h4 class="mb-3 blog-title">Lo nuevo de Angular 2025</h4>
+                                <p class="blog-excerpt">Sabes que es lo que trae las nuevas versiones de Angular tras el
+                                    gran salto de su arquitectura</p>
+                                <a class="text-uppercase read-more-link" href="#" style="color: #e21d0d;">Conocer más <i
+                                        class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Repetir para los demás artículos (actualizando clases) -->
+                    <div class="col-md-6 wow slideInUp animate-slideInUp" data-wow-delay="0.6s">
+                        <div class="blog-item bg-light rounded overflow-hidden">
+                            <div class="blog-img position-relative overflow-hidden blog-img-container">
+                                <img class="img-fluid" src="img/blog-2.jpg" alt="">
+                                <a class="position-absolute top-0 start-0 text-white rounded-end mt-5 py-2 px-4 blog-category"
+                                    href="" style="background: linear-gradient(135deg, #e21d0d, #b02a37);">Web
+                                    Design</a>
+                            </div>
+                            <div class="p-4 blog-content">
+                                <div class="d-flex mb-3 blog-meta">
+                                    <small class="me-3"><i class="far fa-user me-2"
+                                            style="color: #e21d0d !important;"></i>John Doe</small>
+                                    <small><i class="far fa-calendar-alt me-2" style="color: #e21d0d !important;"></i>01
+                                        Jan, 2045</small>
+                                </div>
+                                <h4 class="mb-3 blog-title">How to build a website</h4>
+                                <p class="blog-excerpt">Dolor et eos labore stet justo sed est sed sed sed dolor stet
+                                    amet</p>
+                                <a class="text-uppercase read-more-link" href="" style="color: #e21d0d;">Read More <i
+                                        class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Continuar actualizando todas las tarjetas de blog similares... -->
+
+                    <!-- Paginación -->
+                    <div class="col-12 wow slideInUp" data-wow-delay="0.1s">
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination pagination-lg m-0 blog-pagination">
+                                <li class="page-item disabled">
+                                    <a class="page-link rounded-0" href="#" aria-label="Previous">
+                                        <span aria-hidden="true"><i class="bi bi-arrow-left"></i></span>
+                                    </a>
+                                </li>
+                                <li class="page-item active">
+                                    <a class="page-link rounded-0" href="#"
+                                        style="background: linear-gradient(135deg, #e21d0d, #b02a37); border: none;">1</a>
+                                </li>
+                                <li class="page-item"><a class="page-link rounded-0" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link rounded-0" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link rounded-0" href="#" aria-label="Next">
+                                        <span aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <!-- Blog list End -->
+
+            <!-- Sidebar Start -->
+            <div class="col-lg-4">
+                <!-- Search Form Start -->
+                <div class="mb-5 wow slideInUp sidebar-widget" data-wow-delay="0.1s">
+                    <div class="input-group sidebar-search">
+                        <input type="text" class="form-control p-3" placeholder="Keyword">
+                        <button class="btn px-4"
+                            style="background: linear-gradient(135deg, #e21d0d, #b02a37); color: white;"><i
+                                class="bi bi-search"></i></button>
+                    </div>
+                </div>
+                <!-- Search Form End -->
+
+                <!-- Category Start -->
+                <div class="mb-5 wow slideInUp sidebar-widget" data-wow-delay="0.1s">
+                    <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                        <h3 class="mb-0 widget-title">Categorias</h3>
+                    </div>
+                    <div class="link-animated d-flex flex-column justify-content-start category-list">
+                        <a class="h5 fw-semi-bold bg-light rounded py-2 px-3 mb-2 category-item" href="#">
+                            <i class="bi bi-arrow-right me-2"></i>Web Design
+                        </a>
+                        <a class="h5 fw-semi-bold bg-light rounded py-2 px-3 mb-2 category-item" href="#">
+                            <i class="bi bi-arrow-right me-2"></i>Web Development
+                        </a>
+                        <a class="h5 fw-semi-bold bg-light rounded py-2 px-3 mb-2 category-item" href="#">
+                            <i class="bi bi-arrow-right me-2"></i>Angular Framework
+                        </a>
+                        <a class="h5 fw-semi-bold bg-light rounded py-2 px-3 mb-2 category-item" href="#">
+                            <i class="bi bi-arrow-right me-2"></i>Keyword Research
+                        </a>
+                        <a class="h5 fw-semi-bold bg-light rounded py-2 px-3 mb-2 category-item" href="#">
+                            <i class="bi bi-arrow-right me-2"></i>Email Marketing
+                        </a>
+                    </div>
+                </div>
+                <!-- Category End -->
+
+                <!-- Recent Post Start -->
+                <div class="mb-5 wow slideInUp sidebar-widget" data-wow-delay="0.1s">
+                    <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                        <h3 class="mb-0 widget-title">Recent Post</h3>
+                    </div>
+                    <div class="d-flex rounded overflow-hidden mb-3 recent-post-item">
+                        <img class="img-fluid recent-post-img" src="img/blog-1.jpg"
+                            style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                        <a href=""
+                            class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0 recent-post-content">Lorem
+                            ipsum dolor sit amet adipis elit</a>
+                    </div>
+                    <div class="d-flex rounded overflow-hidden mb-3 recent-post-item">
+                        <img class="img-fluid recent-post-img" src="img/blog-2.jpg"
+                            style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                        <a href=""
+                            class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0 recent-post-content">Lorem
+                            ipsum dolor sit amet adipis elit</a>
+                    </div>
+                    <div class="d-flex rounded overflow-hidden mb-3 recent-post-item">
+                        <img class="img-fluid recent-post-img" src="img/blog-3.jpg"
+                            style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                        <a href=""
+                            class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0 recent-post-content">Lorem
+                            ipsum dolor sit amet adipis elit</a>
+                    </div>
+                </div>
+                <!-- Recent Post End -->
+
+                <!-- Image Start -->
+                <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
+                    <img src="img/blog-1.jpg" alt="" class="img-fluid rounded">
+                </div>
+                <!-- Image End -->
+
+                <!-- Tags Start -->
+                <div class="mb-5 wow slideInUp sidebar-widget" data-wow-delay="0.1s">
+                    <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                        <h3 class="mb-0 widget-title">Tag Cloud</h3>
+                    </div>
+                    <div class="d-flex flex-wrap m-n1 tag-cloud">
+                        <a href="" class="btn btn-light m-1 tag-item">Design</a>
+                        <a href="" class="btn btn-light m-1 tag-item">Development</a>
+                        <a href="" class="btn btn-light m-1 tag-item">Angular</a>
+                        <a href="" class="btn btn-light m-1 tag-item">SEO</a>
+                        <a href="" class="btn btn-light m-1 tag-item">Writing</a>
+                        <a href="" class="btn btn-light m-1 tag-item">Consulting</a>
+                        <a href="" class="btn btn-light m-1 tag-item">Web Design</a>
+                        <a href="" class="btn btn-light m-1 tag-item">JavaScript</a>
+                    </div>
+                </div>
+                <!-- Tags End -->
+
+                <!-- Plain Text Start -->
+                <div class="wow slideInUp sidebar-widget" data-wow-delay="0.1s">
+                    <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                        <h3 class="mb-0 widget-title">Plain Text</h3>
+                    </div>
+                    <div class="bg-light text-center" style="padding: 30px; border-radius: 10px;">
+                        <p>Vero sea et accusam justo dolor accusam lorem consetetur, dolores sit amet sit dolor clita
+                            kasd justo, diam accusam no sea ut tempor magna takimata, amet sit et diam dolor ipsum amet
+                            diam</p>
+                        <a href="" class="btn py-2 px-4"
+                            style="background: linear-gradient(135deg, #e21d0d, #b02a37); color: white; border: none;">Read
+                            More</a>
+                    </div>
+                </div>
+                <!-- Plain Text End -->
+            </div>
+            <!-- Sidebar End -->
+        </div>
+    </div>
+</div>
+<!-- Blog End -->
+
+<app-footer></app-footer>
